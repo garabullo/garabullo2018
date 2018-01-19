@@ -5,8 +5,8 @@
 #endif
 // el pin al que están unidos los leds
 // en la versión preliminar de la placa es el pin 12
-//#define PIN 17
-#define PIN 12
+//#define PIN 12
+#define PIN 17
 #define LEDS 9
 
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LEDS, PIN, NEO_GRB + NEO_KHZ800);
