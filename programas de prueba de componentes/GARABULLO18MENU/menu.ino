@@ -2,7 +2,7 @@ String menu_principal[] = {"ROBOT", "JUEGOS", "RECORDS", "AJUSTES"};
 
 void menu()
 {
-    pantalla.fillScreen(0b0000000011100000);
+    pantalla.fillScreen(ST7735_BLACK);
     pantalla.setTextSize(3);
     
     pantalla.setCursor(20, 5);

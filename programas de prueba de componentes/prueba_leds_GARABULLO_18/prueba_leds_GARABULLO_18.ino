@@ -7,7 +7,7 @@
 // en la versión preliminar de la placa es el pin 12
 //#define PIN 12
 #define PIN 17
-#define LEDS 9
+#define LEDS 10
 
 Adafruit_NeoPixel leds = Adafruit_NeoPixel(LEDS, PIN, NEO_GRB + NEO_KHZ800);
 

@@ -25,8 +25,8 @@ void setup(void) {
 }
 
 void loop(void) {
-  int lectura_A = analogRead(A0);
-  int lectura_B = analogRead(A1);
+  int lectura_A = analogRead(A6);
+  int lectura_B = analogRead(A7);
   if (lectura_A_anterior != lectura_A || lectura_B_anterior != lectura_B)
   {
     pantalla.fillScreen(0);

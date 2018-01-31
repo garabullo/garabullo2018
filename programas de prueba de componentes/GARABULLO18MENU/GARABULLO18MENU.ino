@@ -19,7 +19,7 @@
 #define TFT_CS     10
 #define TFT_RST    8
 #define TFT_DC     9
-byte brillo = 100;
+byte brillo = 10;
 int lectura_A_anterior = 5;
 int lectura_B_anterior = 5;
 
