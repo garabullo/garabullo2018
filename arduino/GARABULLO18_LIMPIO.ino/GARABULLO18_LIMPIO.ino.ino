@@ -8,7 +8,8 @@
 void setup(void) {
   
   limpia_eeprom(0); //función en la pestaña "juegos_comun" testea si es el primer uso del robot
-  sonido_activado = EEPROM.read(0); // almacena el valor en una variable para no estar leyendo la EEPROM cada vez que se llame a funcion de sonido
+  //sonido_activado = EEPROM.read(0); // almacena el valor en una variable para no estar leyendo la EEPROM cada vez que se llame a funcion de sonido
+  sonido_activado = 1;
   led.begin();  
   apaga_leds(); 
   pantalla.initR(INITR_144GREENTAB);
