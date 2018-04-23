@@ -28,3 +28,12 @@ void sonido_alive()
   delay(150);
 }
 
+void sonido_fail()
+{
+  if (sonido_activado)
+  {
+    tone(buzzer, 500, 1000);
+    delay(1100);
+  }
+}
+

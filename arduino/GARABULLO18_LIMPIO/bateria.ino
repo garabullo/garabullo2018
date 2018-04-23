@@ -16,7 +16,6 @@ void bateria()
   }
   led.show();
 }
-
 //función que testea que no se ha pulsado nada en 2 minutos y avisa de que está encendido
 void test_alive()
 {

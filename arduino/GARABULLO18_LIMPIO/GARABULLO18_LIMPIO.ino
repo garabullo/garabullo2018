@@ -1,15 +1,11 @@
-// 29 de marzo de 2018
+// 23 de abril de 2018
 // Programa de garabullo
 // Toda la información en https://github.com/garabullo/garabullo2018/wiki/1-Home
-
 #include "configuracion.h" // en la pestaña configuración.h está todo lo que se puede modificar
 #include "configuracion_avanzado.h" // en configuración_avanzado.h todas las configuraciones iniciales que no se deberían modificar
-
 void setup(void) {
-  
   limpia_eeprom(0); //función en la pestaña "juegos_comun" testea si es el primer uso del robot
-  //sonido_activado = EEPROM.read(0); // almacena el valor en una variable para no estar leyendo la EEPROM cada vez que se llame a funcion de sonido
-  sonido_activado = 1;
+  sonido_activado = EEPROM.read(0); // almacena el valor en una variable para no estar leyendo la EEPROM cada vez que se llame a funcion de sonido
   led.begin();  
   apaga_leds(); 
   pantalla.initR(INITR_144GREENTAB);
@@ -26,12 +22,7 @@ void setup(void) {
   pinMode(IN4i, OUTPUT); 
   pinMode(buzzer, OUTPUT);
   presentacion();
-  
-  
 }
-
 void loop(void) {
   menu();
 }
-
-
