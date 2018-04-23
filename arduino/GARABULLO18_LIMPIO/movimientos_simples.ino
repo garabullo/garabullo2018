@@ -77,16 +77,16 @@ void atras()
 void izquierda()
 {
   
-  for (int pasos = 0; pasos < pasosGiro; pasos++)
+  for (int pasos = 0; pasos < pasos_giro; pasos++)
   {
     int aceleracion;
     if (pasos < 20)
     {
       aceleracion = acelera(pasos); 
     }
-    if ((pasosGiro - pasos) < 20)
+    if ((pasos_giro - pasos) < 20)
     {
-      aceleracion = decelera(pasosGiro - pasos); 
+      aceleracion = decelera(pasos_giro - pasos); 
     }
     for (int i = 7; i >= 0; i--)
     {
@@ -106,16 +106,16 @@ void izquierda()
 
 void derecha()
 {
-  for (int pasos = 0; pasos < pasosGiro; pasos++)
+  for (int pasos = 0; pasos < pasos_giro; pasos++)
   {
     int aceleracion;
     if (pasos < 20)
     {
       aceleracion = acelera(pasos); 
     }
-    if ((pasosGiro - pasos) < 20)
+    if ((pasos_giro - pasos) < 20)
     {
-      aceleracion = decelera(pasosGiro - pasos); 
+      aceleracion = decelera(pasos_giro - pasos); 
     }
     for (int i = 7; i >= 0; i--)
     {

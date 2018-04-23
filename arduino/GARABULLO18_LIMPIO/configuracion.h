@@ -20,12 +20,11 @@ int lectura_boton_8 = 188;
 byte brillo = 25;
 
 int tiempoEntrePaso = 1350;
-/****************************Variables pasos_ecto y pasosGiro**************************************
+/****************************Variables pasosRecto y pasosGiro**************************************
    En pasosRecto se debe almacenar el número de pasos que necesita GARABULLO para avanzar un cuadro
    En pasosGiro se debe almacenar el número de pasos que necesita GARABULLO para girar 90º
 */
-int pasos_recto = 77;
-int pasosGiro = 52;
+int pasos_recto = 78;
+int pasos_giro = 54;
 
-String owner = "by DiegoLale";
 

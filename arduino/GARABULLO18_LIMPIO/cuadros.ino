@@ -1,8 +1,11 @@
 void cuadros()
 {
+
   apaga_leds();
+  cargando(5);
   puntero_almacen = 0;
   boolean salida = 0;
+  boolean bandera_cartel_borrado = 0;
   pantalla_inicio_cuadros();
   while (almacen[puntero_almacen])
   {
@@ -16,8 +19,20 @@ void cuadros()
     switch (boton)
     {
       case 0:
-        vacia_almacen();
-        salida = 1;
+        if (puntero_almacen > 0)
+        {
+          vacia_almacen();
+          marca_movimientos();
+          bandera_cartel_borrado = 0;
+          pantalla.setTextSize(2);
+          pantalla.setCursor(0, 0);
+          pantalla.setTextColor(AMARILLO, ROJO);
+          pantalla.print("SALIR");
+        }
+        else
+        {
+          salida = 1;
+        }
         break;
 
       case 1:
@@ -40,7 +55,11 @@ void cuadros()
 
       case 4:
         arranca_chofer(); // al pulsar el botón central empieza los movimientos
-        salida = 1;
+        //salida = 1;
+        delay(1000);
+        sonido_acierto();
+        delay(1000);
+        leds_cuadros();
         break;
 
       case 5:
@@ -54,6 +73,15 @@ void cuadros()
         marca_movimientos();
         break;
     }
+    if (bandera_cartel_borrado == 0 && puntero_almacen > 0)
+    {
+      pantalla.setTextSize(2);
+      pantalla.setCursor(0, 0);
+      pantalla.setTextColor(AMARILLO, ROJO);
+      pantalla.print("BORRA");
+      bandera_cartel_borrado = 1;
+    }
+
   }
 }
 void pantalla_inicio_cuadros()
@@ -80,21 +108,13 @@ void pantalla_inicio_cuadros()
   pantalla.setTextSize(2);
   pantalla.setCursor(0, 0);
   pantalla.setTextColor(AMARILLO, ROJO);
-  pantalla.print("BORRA");
+  pantalla.print("SALIR");
 
   pantalla.setCursor(65, 0);
   pantalla.setTextColor(ROJO, AMARILLO);
   pantalla.print("PAUSA");
+  leds_cuadros();
 
-  led.setPixelColor(0, led.Color(brillo, 0, 0)); // borrar
-  led.setPixelColor(2, led.Color(brillo, brillo, 0)); // pausa
-  led.setPixelColor(1, led.Color(0, brillo, 0));
-  led.setPixelColor(3, led.Color(0, brillo, 0));
-  led.setPixelColor(5, led.Color(0, brillo, 0));
-  led.setPixelColor(7, led.Color(0, brillo, 0));
-  led.setPixelColor(4, led.Color(0, 0, brillo));
-
-  led.show();
 
 }
 void todos_juntos()
@@ -187,5 +207,18 @@ void vacia_almacen()
   {
     almacen[i] = 0;
   }
+  puntero_almacen = 0;
+}
+void leds_cuadros()
+{
+  apaga_leds();
+  led.setPixelColor(0, led.Color(brillo, 0, 0)); // borrar
+  led.setPixelColor(2, led.Color(brillo, brillo, 0)); // pausa
+  led.setPixelColor(1, led.Color(0, brillo, 0));
+  led.setPixelColor(3, led.Color(0, brillo, 0));
+  led.setPixelColor(5, led.Color(0, brillo, 0));
+  led.setPixelColor(7, led.Color(0, brillo, 0));
+  led.setPixelColor(4, led.Color(0, 0, brillo));
+  led.show();
 }
 
