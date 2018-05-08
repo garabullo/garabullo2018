@@ -1,3 +1,5 @@
+
+
 boolean test_tiempo_suficiente()
 {
   tiempo_actual = millis();

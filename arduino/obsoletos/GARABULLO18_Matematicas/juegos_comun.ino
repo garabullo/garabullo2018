@@ -26,33 +26,14 @@ void limpia_eeprom(boolean forzado)
   pasos_recto = EEPROM.read(1);
   pasos_giro = EEPROM.read(2);
 }
-void cuenta_atras(int segundillos_y_eso)
-{
-  apaga_leds(1);
-  pantalla.fillScreen(CYAN);
-  pantalla.fillRoundRect(10,10,108,108,5, AMARILLO);
-  pantalla.setTextSize(8);
-  pantalla.setTextColor(NEGRO);
-  while(segundillos_y_eso)
-  {
-  pantalla.setCursor(45, 40);
-  pantalla.print(segundillos_y_eso);
-  delay(600);
-  pantalla.fillRoundRect(10,10,108,108,5, AMARILLO);
-  segundillos_y_eso -= 1;
-  }
-  
-}
 
 
 // Posiciones de eeprom
 /*
  * EEPROM 0 SONIDO ACTIVADO
- * EEPROM 1 PASOS_RECTO
- * eePROM 2 PASOS_GIRO
  * EEPROM 11 MAGIC TILES 1
  * EEPROM 12 MAGIC TILES 2
- * EEPROM 13 SUMA VERDADERO FALSO
+ * 
  * 
  * 
  * 

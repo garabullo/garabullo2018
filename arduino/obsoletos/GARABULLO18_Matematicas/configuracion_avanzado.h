@@ -81,7 +81,6 @@ Adafruit_NeoPixel led = Adafruit_NeoPixel(NUMPIXELS, PIN_leds, NEO_GRB + NEO_KHZ
 
 // eeprom(11) record magic tiles 1
 // eeporm(12) record magic tiles 2
-// eeprom(13) record sumas verdadero falso
 
 // variables globales para el uso del robot
 boolean sonido_activado; // la variable sonido activado se usa para volcar la eeprom y no tener que leer cada vez que se usa
