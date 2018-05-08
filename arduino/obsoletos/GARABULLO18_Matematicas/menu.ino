@@ -162,7 +162,6 @@ void juegos()
   apaga_leds(0);
   led.setPixelColor(0, led.Color(0, brillo, 0));
   led.setPixelColor(2, led.Color(brillo, brillo, 0));
-  led.setPixelColor(8, led.Color(brillo / 2, 0, 0));
   led.show();
   pantalla.fillScreen(ST7735_BLACK);
   pantalla.setTextSize(2);
@@ -174,9 +173,6 @@ void juegos()
   pantalla.setTextColor(AMARILLO);
   pantalla.setCursor(80, 9);
   pantalla.print("SUMA");
-  pantalla.setTextColor(ROJO);
-  pantalla.setCursor(65, 105);
-  pantalla.print("SALIR");
   boolean salida = 0;
   while (!salida)
   {
@@ -185,14 +181,10 @@ void juegos()
     switch (boton)
     {
       case 0:
-        apaga_leds(1);
         nivel_baldosas();
-        salida = 1;
         break;
       case 2:
-        apaga_leds(1);
-        sumas();
-        salida = 1;
+        //sumas();
         break;
       case 8:
         salida = 1;
@@ -372,5 +364,7 @@ void guarda_pasos()
         break;
     }
   }
+
+
 }
 

@@ -6,7 +6,7 @@
 
 void nivel_baldosas()
 {
-  bateria();// lo primero ver como está la batería
+    bateria();// lo primero ver como está la batería
   pantalla.fillScreen(ST7735_BLACK);
   apaga_leds(0);
   led.setPixelColor(1, led.Color(0, brillo, 0));
@@ -29,7 +29,7 @@ void nivel_baldosas()
   {
     test_alive();
     int boton = boton_pulsado();
-
+    
     if (boton == 1)
     {
       col = 2;
@@ -208,9 +208,6 @@ boolean test_terminado()
 void final(int puntuacion, int colores)
 {
   //ole();
-  apaga_leds(0);
-  led.setPixelColor(8, led.Color(brillo, 0, 0));
-  led.show();
   pantalla.fillScreen(ST7735_BLACK);
   pantalla.setCursor(0, 0);
   pantalla.setTextSize(3);
@@ -219,30 +216,15 @@ void final(int puntuacion, int colores)
   pantalla.setTextColor(ST7735_WHITE);
   pantalla.print("    ");
   pantalla.print(puntuacion);
-  if (puntuacion >= EEPROM.read(colores + 10 - 1)) // testea si hay record nuevo
+  if (puntuacion > EEPROM.read(colores+10-1)) // testea si hay record nuevo
   {
     pantalla.setCursor(0, 60);
     pantalla.setTextSize(3);
     pantalla.setTextColor(ST7735_WHITE, ST7735_GREEN);
     pantalla.print("!RECORD NUEVO!");
-    EEPROM.write(colores + 10 - 1 , puntuacion);
+    EEPROM.write(colores+10-1 , puntuacion);
   }
-  pantalla.setCursor(80, 110);
-  pantalla.setTextSize(1);
-  pantalla.setTextColor(ROJO);
-  pantalla.print("SALIR");
-  boolean salida = 0;
-  while (!salida)
-  {
-    test_alive();
-    byte boton = boton_pulsado();
-    switch (boton)
-    {
-      case 8:
-        salida = 1;
-        break;
-    }
-  }
+  delay(5000);
 }
 void muestra_aciertos()
 {
@@ -264,12 +246,12 @@ void entrada(int col)
   apaga_leds(0);
   led.setPixelColor(4, led.Color(0, brillo, 0));
   led.show();
-
+    
   pantalla.setCursor(0, 0);
   pantalla.setTextSize(3);
   pantalla.setTextColor(ST7735_WHITE);
   pantalla.print("Record actual = ");
-  pantalla.print(EEPROM.read(col + 10 - 1));
+  pantalla.print(EEPROM.read(col+10-1));
   pantalla.setTextSize(2);
   pantalla.setTextColor(ST7735_GREEN);
   pantalla.setCursor(0, 80);

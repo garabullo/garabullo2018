@@ -48,4 +48,8 @@ void cargando(int tiempo)
     if (i < 34 || i == 42 || i == 86 || i > 100)
       delay(tiempo * 5);
   }
+
+
+
 }
+

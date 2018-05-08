@@ -1,5 +1,6 @@
 void cuadros()
 {
+
   apaga_leds(1);
   cargando(5);
   puntero_almacen = 0;
@@ -34,6 +35,7 @@ void cuadros()
           salida = 1;
         }
         break;
+
       case 1:
         almacen[puntero_almacen] = 1; // el 1 almacena movimiento recto
         puntero_almacen += 1;
@@ -221,3 +223,4 @@ void leds_cuadros()
   led.setPixelColor(4, led.Color(0, 0, brillo));
   led.show();
 }
+
