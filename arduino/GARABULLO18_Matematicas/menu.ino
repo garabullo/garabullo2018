@@ -47,7 +47,6 @@ void menu()
         break;
       case 6:
         salida = 1;
-        cargando(4);
         records();
         break;
       case 8:
@@ -161,7 +160,7 @@ void juegos()
 {
   apaga_leds(0);
   led.setPixelColor(0, led.Color(0, brillo, 0));
-  led.setPixelColor(2, led.Color(brillo, brillo, 0));
+  led.setPixelColor(2, led.Color(0, 0, brillo));
   led.setPixelColor(8, led.Color(brillo / 2, 0, 0));
   led.show();
   pantalla.fillScreen(ST7735_BLACK);
@@ -171,7 +170,7 @@ void juegos()
   pantalla.print("MAGIC");
   pantalla.setCursor(0, 18);
   pantalla.print("TILES");
-  pantalla.setTextColor(AMARILLO);
+  pantalla.setTextColor(AZUL);
   pantalla.setCursor(80, 9);
   pantalla.print("SUMA");
   pantalla.setTextColor(ROJO);
@@ -204,12 +203,27 @@ void juegos()
 
 void records()
 {
+  apaga_leds(1);
   pantalla.fillScreen(ST7735_BLACK);
-  pantalla.setTextSize(2);
-  pantalla.setTextColor(BLANCO);
+  pantalla.setTextSize(1);
+  pantalla.setTextColor(VERDE);
   pantalla.setCursor(0, 0);
-  pantalla.print("menu records");
-  delay(1000);
+  pantalla.print("MAGIC TILES:");
+  pantalla.setCursor(10, 15);
+  pantalla.print("Nivel 1 = ");
+
+  pantalla.print(EEPROM.read(11));
+  pantalla.setCursor(10, 25);
+
+  pantalla.print("Nivel 2 = ");
+
+  pantalla.print(EEPROM.read(12));
+  pantalla.setCursor(0, 40);
+
+  pantalla.print("SUMAS = ");
+
+  pantalla.print(EEPROM.read(13));
+  delay(5000);
 }
 
 void menu_pasos()

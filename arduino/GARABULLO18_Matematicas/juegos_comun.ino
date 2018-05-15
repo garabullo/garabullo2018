@@ -41,7 +41,7 @@ void cuenta_atras(int segundillos_y_eso)
   pantalla.fillRoundRect(10,10,108,108,5, AMARILLO);
   segundillos_y_eso -= 1;
   }
-  
+  pantalla.fillScreen(NEGRO);
 }
 
 

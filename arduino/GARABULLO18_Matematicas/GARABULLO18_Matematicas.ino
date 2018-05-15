@@ -21,6 +21,7 @@ void setup(void) {
   pinMode(IN3i, OUTPUT);
   pinMode(IN4i, OUTPUT); 
   pinMode(buzzer, OUTPUT);
+  
   presentacion();
   tiempo_ultimo_evento = millis();
 }

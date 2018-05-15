@@ -10,7 +10,7 @@ void presentacion()
   pantalla.setTextSize(1);
   pantalla.setTextColor(ST7735_WHITE);
   pantalla.print("by DiegoLale");
-  int tiempo = millis();
+  long tiempo = millis();
   while (tiempo + 2000 > millis())
   {
     apaga_leds(0);
