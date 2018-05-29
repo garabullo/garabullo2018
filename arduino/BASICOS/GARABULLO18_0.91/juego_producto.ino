@@ -35,14 +35,14 @@ void juego_producto()
     int numero_1 = random(1, 10);
     int numero_2 = random(1, 11);
     int respuesta_producto = numero_1 * numero_2;
-    int posicion_acierto = random(10); // donde va a estar la respuesta correcta
+    int posicion_acierto = random(9); // donde va a estar la respuesta correcta
 
     for (int i = 0; i < 9; i++) // aqui se colocan las respuestas en el array muestras
     {
       muestras[(i + posicion_acierto) % 9] = numero_1 * (((numero_2 + i) % 10));
       if (((numero_2 + i) % 10) == 0)
       {
-        muestras[(i + posicion_acierto) % 9] = numero_1 * 10;
+        muestras[(i + posicion_acierto) % 10] = numero_1 * 10;
       }
     }
 
