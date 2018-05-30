@@ -54,7 +54,7 @@ void cuenta_atras(int segundillos_y_eso)
  * EEPROM 12 MAGIC TILES 2
  * EEPROM 13 SUMA VERDADERO FALSO
  * EEPROM 14 SIMON
- * 
+ * EEPROM 15 PRODUCTO
  * 
  * 
  * 
