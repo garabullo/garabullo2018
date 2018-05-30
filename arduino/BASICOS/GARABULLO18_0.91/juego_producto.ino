@@ -68,6 +68,10 @@ void juego_producto()
     while (boton != posicion_acierto && (tiempo_actual - tiempo_inicio) < 60000)
     {
       boton = boton_pulsado();
+      if(boton != posicion_acierto && boton != 100)
+      {
+        sonido_fail();
+      }
       tiempo_actual = millis();
       barra_nueva(tiempo_actual - tiempo_inicio, 30, 60000);
     }
