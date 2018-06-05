@@ -20,17 +20,27 @@ void sumas()
   pantalla.print(EEPROM.read(13));
   delay(3000);
   cuenta_atras(5);
-
+  tiempo_juego = 8000;
   tiempo_inicio = millis();
   tiempo_actual = millis();
+
   led.setPixelColor(3, led.Color(0, brillo, 0));
   led.setPixelColor(5, led.Color(brillo, 0, 0));
   led.show();
-  barra_nueva(tiempo_actual - tiempo_inicio,99, 90000);
-  while ((tiempo_actual - tiempo_inicio) < 90000)
+  barra_nueva(tiempo_actual - tiempo_inicio, 99, tiempo_juego);
+  vidas = 3;
+  while (vidas > 0)
   {
+    tiempo_inicio = millis();
     tiempo_actual = millis();
-    pantalla.fillRect(0,0,128,98,NEGRO);
+    pantalla.fillRect(0, 0, 128, 98, NEGRO);
+    pantalla.setTextSize(2);
+    pantalla.setTextColor(ROJO);
+    pantalla.setCursor(0, 0);
+    for (int v = 0; v < vidas; v++)
+    {
+      pantalla.write(3);
+    }
     randomSeed(millis());
     int primer_numero = random(100);
     int segundo_numero = random(100);
@@ -89,25 +99,30 @@ void sumas()
     pantalla.print(resultado);
     pantalla.setTextSize(2);
     pantalla.setTextColor(VERDE);
-    pantalla.fillRect(55,110, 30, 15 , NEGRO);
+    pantalla.fillRect(55, 110, 30, 15 , NEGRO);
     pantalla.setCursor(55, 110);
     pantalla.print(puntuacion);
 
     int boton = boton_pulsado();
-    while (boton != 3 && boton != 5 && (tiempo_actual - tiempo_inicio) < 90000)
+    while (boton != 3 && boton != 5 && (tiempo_actual - tiempo_inicio) < tiempo_juego)
     {
       boton = boton_pulsado();
       delay(5);
       tiempo_actual = millis();
-      barra_nueva(tiempo_actual - tiempo_inicio, 99, 90000);
+      barra_nueva(tiempo_actual - tiempo_inicio, 99, tiempo_juego);
     }
+
     if ((boton == 3 && acierto == 1) || (boton == 5 && acierto == 0))
     {
       sonido_acierto();
       puntuacion += 1;
+      tiempo_juego = tiempo_juego - tiempo_juego / 10;
+      tiempo_inicio = millis();
     }
-    else if (boton == 3 || boton ==5)
+    else
     {
+      vidas -= 1;
+      tiempo_juego = 8000;
       sonido_fail();
       for (int i = 0; i < 128; i++)
       {
