@@ -93,6 +93,7 @@ int matriz[9];
 byte almacen [100]; // aquí se almacenan los movimientos del robot
 byte puntero_almacen = 0;
 boolean tiempo_suficiente;
+long tiempo_juego;
 long tiempo_actual;
 long tiempo_inicio;
 long tiempo_ultimo_evento;
