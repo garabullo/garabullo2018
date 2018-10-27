@@ -246,11 +246,11 @@ module vaciado_tornillos_placa()
 }
 module pantalla()
 {
-    cube([27,27,50], center = true);
+    cube([27,27.5,50], center = true);
     hull()
     {
-    translate([0,0,-1])cube([30,30,1], center = true);
-    translate([0,0,0])cube([27,27,3], center = true);
+    translate([0,0,-1])cube([30,30.5,1], center = true);
+    translate([0,0,0])cube([27,27.5,3], center = true);
     }
 }
 module interruptor()
