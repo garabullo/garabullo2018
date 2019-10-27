@@ -1,4 +1,4 @@
-String propietario = "Diego Lale";
+String propietario = "Aricia";
 String version_firmware = "0.92";
 
 //umbral lecturas 
