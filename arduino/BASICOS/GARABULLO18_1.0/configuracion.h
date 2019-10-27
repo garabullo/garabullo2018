@@ -1,4 +1,4 @@
-String propietario = "Prueba";
+String propietario = "owner"; // ¡Anda majete!, pon aquí tu nombre (máximo 10 letras)
 String version_firmware = "1.0";
 
 //umbral lecturas 
