@@ -17,7 +17,7 @@ void apaga_led_bateria() //funcion que hace eso mismo... claro
 }
 
 
-void leds_amarillo() //apaga todos los leds escepto el de la batería
+void leds_amarillo()
 {
   for (int i = 0; i < 9; i++)
   {
