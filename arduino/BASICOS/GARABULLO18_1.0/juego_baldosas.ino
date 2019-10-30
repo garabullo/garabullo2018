@@ -6,7 +6,7 @@
 
 void nivel_baldosas()
 {
-  bateria();// lo primero ver como está la batería
+  //bateria();// lo primero ver como está la batería
   pantalla.fillScreen(ST7735_BLACK);
   apaga_leds(0);
   led.setPixelColor(1, led.Color(0, brillo, 0));

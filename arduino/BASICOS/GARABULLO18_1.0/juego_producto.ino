@@ -1,7 +1,7 @@
 void juego_producto()
 {
   puntuacion = 0;
-  bateria();
+  //bateria();
   pantalla.fillScreen(NEGRO);
   apaga_leds(1);
   pantalla.setTextSize(2);

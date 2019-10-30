@@ -42,11 +42,11 @@
 // librerías necesarias para el funcionamiento del robot
 #include <EEPROM.h>
 
-#include <Adafruit_GFX.h>         // versión 1.4.8
-#include <Adafruit_ST7735.h>      // versión 1.2.8
+#include <Adafruit_GFX.h>         // versión 1.6.1
+#include <Adafruit_ST7735.h>      // versión 1.5.5
 #include <SPI.h>
 
-#include <Adafruit_NeoPixel.h>  // versión 1.1.8
+#include <Adafruit_NeoPixel.h>  // versión 1.3.0
 #ifdef __AVR__
   #include <avr/power.h>
 #endif

@@ -9,10 +9,11 @@ void setup(void) {
   limpia_eeprom(0); //función en la pestaña "juegos_comun" testea si es el primer uso del robot
   sonido_activado = EEPROM.read(0); // almacena el valor en una variable para no estar leyendo la EEPROM cada vez que se llame a funcion de sonido
   led.begin();  
-  apaga_leds(1); 
+  //apaga_leds(1); 
   pantalla.initR(INITR_144GREENTAB);
   pantalla.setTextWrap(true); // Permite o no que el texto siga fuera de la pantalla o cambie de línea al llegar al borde
-  pantalla.fillScreen(ST7735_BLACK);
+  
+  pantalla.fillScreen(NEGRO);
   pantalla.setRotation(1);
   pinMode(IN1d, OUTPUT);
   pinMode(IN2d, OUTPUT);

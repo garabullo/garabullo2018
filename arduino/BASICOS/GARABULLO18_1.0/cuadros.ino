@@ -1,6 +1,6 @@
 void cuadros()
 {
-  apaga_leds(1);
+  //apaga_leds(1);
   cargando(5);
   puntero_almacen = 0;
   boolean salida = 0;
@@ -132,26 +132,6 @@ void todos_juntos()
   }
 }
 
-void test_movimientos()
-{
-  bateria();
-  apaga_leds(1);
-  delay(1000);
-  for (int i = 0; i < 2; i++)
-  {
-    adelante();
-    delay(500);
-    derecha();
-    delay(500);
-    izquierda();
-    delay(500);
-    atras();
-    delay(500);
-  }
-  delay(1000);
-  sonido_acierto();
-  pantalla.fillScreen(NEGRO);
-}
 
 void arranca_chofer()
 {
