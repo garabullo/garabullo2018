@@ -89,7 +89,7 @@ Adafruit_NeoPixel led = Adafruit_NeoPixel(NUMPIXELS, PIN_leds, NEO_GRB + NEO_KHZ
 boolean sonido_activado; // la variable sonido activado se usa para volcar la eeprom y no tener que leer cada vez que se usa
 
 // matriz pare el juego de baldosas... e o que cumpra
-int matriz[9];
+byte matriz[9];
 byte almacen [100]; // aquí se almacenan los movimientos del robot
 byte puntero_almacen = 0;
 boolean tiempo_suficiente;
@@ -102,9 +102,9 @@ long medida_tiempo;
 byte muestras[9];
 
 byte vidas;
-int puntuacion;
+byte puntuacion;
 
-int patas_oshwi = 0;
+byte patas_oshwi = 0;
 long tiempo_inicio_nota;
 boolean cambio_nota;
 int tiempo_espera_nota;

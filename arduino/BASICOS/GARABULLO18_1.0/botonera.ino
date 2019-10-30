@@ -1,4 +1,4 @@
-int boton_pulsado()
+byte boton_pulsado()
 {
   if (analogRead (botonera1) > 50)
   {
